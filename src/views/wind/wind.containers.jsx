@@ -53,7 +53,7 @@ export default class WindContainer extends Component {
     console.log(this.state)
     return (
       <Grid container justify='center'>
-        <NiceCharts data={this.state.windData.i_data} labels={this.state.windData.labels}/>
+        <NiceCharts i_data={this.state.windData.i_data} v_data={this.state.windData.v_data} w_s_data={this.state.windData.w_s_data} labels={this.state.windData.labels}/>
       </Grid>
     )
   }

@@ -29,9 +29,9 @@ export default class tables extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   example().then(response => this.setState(({ todos }) => ({ todos: [...response.windData] })))
-  // }
+  componentDidMount() {
+    example().then(response => this.setState(({ todos }) => ({ todos: [...response.wind_data] })))
+  }
 
   render() {
     const { todos } = this.state
@@ -56,7 +56,7 @@ export default class tables extends Component {
                     {todos.map(row => (
                       <TableRow key={row._id}>
                         <TableCell component="th" scope="row" align="left">
-                          {row.id}
+                          {row.timestamp}
                         </TableCell>
                         <TableCell component="th" scope="row" align="center">
                           {row.w_d}
