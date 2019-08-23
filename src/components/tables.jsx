@@ -38,7 +38,7 @@ export default class tables extends Component {
 
     return (
       <Container>
-        <Grid container direction="column" justify="space-between" alignItems="flex-start">
+        <Grid container direction="column" justify="space-between" alignItems="flex-start" style={{ overflowX: 'auto'}}>
           <Grid container direction="row" justify="space-between" alignItems="center">
           <Grid item sm={12} md={12}>
             <Paper>
