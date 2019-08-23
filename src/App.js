@@ -31,7 +31,7 @@ export default class App extends Component {
         <Grid item container sm={6} spacing={2}>
           <Anime {...animeProps}>
             {todos.map((v, i) => (
-              <Grid key={Math.random(0, 10000)} item xs={12} sm={6} lg={4}>
+              <Grid key={i} item xs={12} sm={6} lg={4}>
                 <Card>
                   <CardContent>
                     <Typography variant='h6'>
