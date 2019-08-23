@@ -11,7 +11,9 @@ import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import { example } from '../services/todos.service'
-import NiceChart from '../components/niceCharts'
+
+import NiceCharts from '../components/niceCharts'
+
 import Tables from '../components/tables'
 
 import {
@@ -31,10 +33,6 @@ export default class Home extends Component {
     }
   }
 
-  componentDidMount() {
-    example().then(response => this.setState(({ todos }) => ({ todos: [...response.windData] })))
-  }
-
   render() {
     const { todos } = this.state
 
@@ -52,7 +50,7 @@ export default class Home extends Component {
           </AppBar>
 
           <Route exact path="/" component={Tables} />
-          <Route exact path="/charts" component={NiceChart} />
+          <Route exact path="/charts" component={NiceCharts} />
         </Container>
       </BrowserRouter>
     )

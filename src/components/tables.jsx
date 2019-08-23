@@ -29,9 +29,9 @@ export default class tables extends Component {
     }
   }
 
-  componentDidMount() {
-    example().then(response => this.setState(({ todos }) => ({ todos: [...response.windData] })))
-  }
+  // componentDidMount() {
+  //   example().then(response => this.setState(({ todos }) => ({ todos: [...response.windData] })))
+  // }
 
   render() {
     const { todos } = this.state
