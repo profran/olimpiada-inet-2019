@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Grid } from '@material-ui/core'
-import { example } from '../../services/example.service'
+import { example } from '../../services/todos.service'
 import TodoCard from './todos.components'
 
 export default class TodosContainer extends Component {
