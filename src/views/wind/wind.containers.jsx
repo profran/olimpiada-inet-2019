@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Grid } from '@material-ui/core'
 import { getWindData } from '../../services/wind.service'
+import NiceCharts from '../../components/niceCharts'
 
 export default class WindContainer extends Component {
   constructor (props) {
@@ -8,7 +9,7 @@ export default class WindContainer extends Component {
 
     this.state = {
       windData: {
-        lables: [],
+        labels: [],
         i_data: [],
         w_d_data: [],
         w_s_data: [],
@@ -49,9 +50,10 @@ export default class WindContainer extends Component {
   }
 
   render () {
+    console.log(this.state)
     return (
       <Grid container justify='center'>
-        Xd
+        <NiceCharts data={this.state.windData.i_data} labels={this.state.windData.labels}/>
       </Grid>
     )
   }

@@ -7,40 +7,14 @@ import { Line } from 'react-chartjs-2'
 const useStyles = makeStyles(theme => ({
 }))
 
-
 function NiceCharts(props) {
-  const data2 = {
-    labels: props.labels,
-    datasets: [
-      {
-        label: props.mainLabel,
-        fill: false,
-        lineTension: 0.1,
-        backgroundColor: "rgba(225,0,0,0.4)",
-        borderColor: "red", // The main line color
-        borderCapStyle: 'square',
-        borderDash: [], // try [5, 15] for instance
-        borderDashOffset: 0.0,
-        borderJoinStyle: 'miter',
-        pointBorderColor: "black",
-        pointBackgroundColor: "white",
-        pointBorderWidth: 1,
-        pointHoverRadius: 8,
-        pointHoverBackgroundColor: "yellow",
-        pointHoverBorderColor: "brown",
-        pointHoverBorderWidth: 2,
-        pointRadius: 4,
-        pointHitRadius: 10,
-        spanGaps: true,
-        data: props.data
-      }
-    ]
-  };
+
+  console.log(props)
 
   const data = {
-    label: props.mainLabel,
+    labels: props.labels,
     datasets: [{
-      label: props.mainLabel,
+      label: "velocidad",
       backgroundColor: "rgba(" +
         (Math.floor(Math.random() * (255 - 0) + 0)) + "," +
         (Math.floor(Math.random() * (255 - 0) + 0)) + "," +

@@ -14,6 +14,8 @@ import { example } from '../services/todos.service'
 
 import NiceCharts from '../components/niceCharts'
 
+import WindContainer from '../views/wind/wind.containers'
+
 import Tables from '../components/tables'
 
 import {
@@ -50,7 +52,7 @@ export default class Home extends Component {
           </AppBar>
 
           <Route exact path="/" component={Tables} />
-          <Route exact path="/charts" component={NiceCharts} />
+          <Route exact path="/charts" component={WindContainer} />
         </Container>
       </BrowserRouter>
     )
