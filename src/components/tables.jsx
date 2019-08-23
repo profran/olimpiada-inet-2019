@@ -38,48 +38,48 @@ export default class tables extends Component {
 
     return (
       <Container>
-        <Grid container direction="column" justify="space-between" alignItems="flex-start" >
+        <Grid container direction="column" justify="space-between" alignItems="flex-start">
           <Grid container direction="row" justify="space-between" alignItems="center">
-            <Grid item sm={12} md={12}>
-              <Paper>
-                <Table>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell align="left">Time Stamp</TableCell>
-                      <TableCell align="center">Wind Direction</TableCell>
-                      <TableCell align="center">Wind speed</TableCell>
-                      <TableCell align="center">Tension</TableCell>
-                      <TableCell align="right">Corriente</TableCell>
+          <Grid item sm={12} md={12}>
+            <Paper>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="left">Time Stamp</TableCell>
+                    <TableCell align="center">Wind Direction</TableCell>
+                    <TableCell align="center">Wind speed</TableCell>
+                    <TableCell align="center">Tension</TableCell>
+                    <TableCell align="right">Corriente</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {todos.map(row => (
+                    <TableRow key={row._id}>
+                      <TableCell component="th" scope="row" align="left">
+                        {row.timestamp}
+                      </TableCell>
+                      <TableCell component="th" scope="row" align="center">
+                        {row.w_d}
+                      </TableCell>
+                      <TableCell component="th" scope="row" align="center">
+                        {row.w_s}
+                      </TableCell>
+                      <TableCell component="th" scope="row" align="center">
+                        {row.v}
+                      </TableCell>
+                      <TableCell component="th" scope="row" align="right">
+                        {row.i}
+                      </TableCell>
                     </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {todos.map(row => (
-                      <TableRow key={row._id}>
-                        <TableCell component="th" scope="row" align="left">
-                          {row.timestamp}
-                        </TableCell>
-                        <TableCell component="th" scope="row" align="center">
-                          {row.w_d}
-                        </TableCell>
-                        <TableCell component="th" scope="row" align="center">
-                          {row.w_s}
-                        </TableCell>
-                        <TableCell component="th" scope="row" align="center">
-                          {row.v}
-                        </TableCell>
-                        <TableCell component="th" scope="row" align="right">
-                          {row.i}
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </Paper>
-            </Grid>
+                  ))}
+                </TableBody>
+              </Table>
+            </Paper>
           </Grid>
+        </Grid>
 
         </Grid>
-      </Container>
+      </Container >
     )
   }
 }

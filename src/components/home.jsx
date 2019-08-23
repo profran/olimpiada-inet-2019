@@ -40,17 +40,16 @@ export default class Home extends Component {
 
     return (
       <BrowserRouter>
-        <Container>
-          <AppBar position="static" style={{ marginBottom: '2rem' }}>
-            <Toolbar>
-              <Typography variant="h6" style={{ flexGrow: 1, }}>
-                EoliCox
+        <AppBar position="static" style={{ marginBottom: '2rem' }}>
+          <Toolbar>
+            <Typography variant="h6" style={{ flexGrow: 1, }}>
+              EoliCox
                 </Typography>
-                <Button color="inherit" href='/charts'>Graficos</Button>
-                <Button color="inherit" href='/'>Tablas</Button>
-            </Toolbar>
-          </AppBar>
-
+            <Button color="inherit" href='/charts'>Graficos</Button>
+            <Button color="inherit" href='/'>Tablas</Button>
+          </Toolbar>
+        </AppBar>
+        <Container>
           <Route exact path="/" component={Tables} />
           <Route exact path="/charts" component={WindContainer} />
         </Container>

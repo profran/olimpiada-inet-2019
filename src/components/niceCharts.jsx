@@ -92,18 +92,18 @@ function NiceCharts(props) {
       spanGaps: true,
       data: props.w_s_data
     },
-  ]
+    ]
   };
 
   return (
     <>
       <Grid container direction="row" justify="center" alignItems="center">
-        <Grid item ali>
-          <Typography variant="h3" style={{ fontWeight:'bold' }}>
+        <Grid item style={{ textAlign: 'center' }}>
+          <Typography variant="h3" style={{ fontWeight: 'bold' }}>
             Tablas de datos
           </Typography>
         </Grid>
-        <Grid item md={12} sm={12}>
+        <Grid item md={12} sm={12} style={{overflowX: 'auto', width: '100vh'}}>
           <Line data={data} width={'700'} height={'400'} options={{ maintainAspectRatio: false }} />
         </Grid>
       </Grid>
