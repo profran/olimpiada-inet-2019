@@ -25,7 +25,7 @@ export default class TodosContainer extends Component {
       <Grid container justify='center'>
         <Grid item container sm={6} spacing={2}>
           {todos.map((v, i) => (
-            <TodoCard key={i} title={v.title} />
+            <TodoCard key={v.id} id={v.id} title={v.title} />
           ))}
         </Grid>
       </Grid>
