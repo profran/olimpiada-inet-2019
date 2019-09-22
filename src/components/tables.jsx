@@ -11,6 +11,7 @@ import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import { example } from '../services/todos.service'
+import { getWindData } from '../services/wind.service';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,7 +31,7 @@ export default class tables extends Component {
   }
 
   componentDidMount() {
-    example().then(response => this.setState(({ todos }) => ({ todos: [...response.wind_data] })))
+    getWindData().then(response => this.setState(({ todos }) => ({ todos: [...response.wind_data] })))
   }
 
   render() {
