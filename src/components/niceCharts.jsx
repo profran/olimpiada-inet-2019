@@ -1,110 +1,105 @@
-import React, { Component } from 'react'
-import { makeStyles } from '@material-ui/core/styles/index'
+import React from 'react'
 import Grid from '@material-ui/core/Grid'
 
 import { Line } from 'react-chartjs-2'
-import { Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core'
 
-const useStyles = makeStyles(theme => ({
-}))
-
-function NiceCharts(props) {
-
+function NiceCharts (props) {
   console.log(props)
 
   const data = {
     labels: props.labels,
     datasets: [{
-      label: "Corriente",
-      backgroundColor: "rgba(" +
-        (Math.floor(Math.random() * (255 - 0) + 0)) + "," +
-        (Math.floor(Math.random() * (255 - 0) + 0)) + "," +
-        (Math.floor(Math.random() * (255 - 0) + 0)) + ",0.2)",
-      borderColor: "#" + ((1 << 24) * Math.random() | 0).toString(16),
+      label: 'Corriente',
+      backgroundColor: 'rgba(' +
+        (Math.floor(Math.random() * (255 - 0) + 0)) + ',' +
+        (Math.floor(Math.random() * (255 - 0) + 0)) + ',' +
+        (Math.floor(Math.random() * (255 - 0) + 0)) + ',0.2)',
+      borderColor: '#' + ((1 << 24) * Math.random() | 0).toString(16),
 
       lineTension: 0.25,
       borderCapStyle: 'square',
       borderDashOffset: 0.0,
       borderJoinStyle: 'miter',
-      pointBorderColor: "black",
-      pointBackgroundColor: "white",
+      pointBorderColor: 'black',
+      pointBackgroundColor: 'white',
 
       pointBorderWidth: 1,
       pointHoverRadius: 5,
-      pointHoverBackgroundColor: "#fdd835",
-      pointHoverBorderColor: "brown",
+      pointHoverBackgroundColor: '#fdd835',
+      pointHoverBorderColor: 'brown',
       pointHoverBorderWidth: 1,
       pointRadius: 3,
       pointHitRadius: 5,
 
       spanGaps: true,
-      data: props.i_data
+      data: props.iData
     },
     {
-      label: "Tension",
-      backgroundColor: "rgba(" +
-        (Math.floor(Math.random() * (255 - 0) + 0)) + "," +
-        (Math.floor(Math.random() * (255 - 0) + 0)) + "," +
-        (Math.floor(Math.random() * (255 - 0) + 0)) + ",0.2)",
-      borderColor: "#" + ((1 << 24) * Math.random() | 0).toString(16),
+      label: 'Tension',
+      backgroundColor: 'rgba(' +
+        (Math.floor(Math.random() * (255 - 0) + 0)) + ',' +
+        (Math.floor(Math.random() * (255 - 0) + 0)) + ',' +
+        (Math.floor(Math.random() * (255 - 0) + 0)) + ',0.2)',
+      borderColor: '#' + ((1 << 24) * Math.random() | 0).toString(16),
 
       lineTension: 0.25,
       borderCapStyle: 'square',
       borderDashOffset: 0.0,
       borderJoinStyle: 'miter',
-      pointBorderColor: "black",
-      pointBackgroundColor: "white",
+      pointBorderColor: 'black',
+      pointBackgroundColor: 'white',
 
       pointBorderWidth: 1,
       pointHoverRadius: 5,
-      pointHoverBackgroundColor: "#fdd835",
-      pointHoverBorderColor: "brown",
+      pointHoverBackgroundColor: '#fdd835',
+      pointHoverBorderColor: 'brown',
       pointHoverBorderWidth: 1,
       pointRadius: 3,
       pointHitRadius: 5,
 
       spanGaps: true,
-      data: props.v_data
+      data: props.vData
     },
     {
-      label: "Velociad del viento",
-      backgroundColor: "rgba(" +
-        (Math.floor(Math.random() * (255 - 0) + 0)) + "," +
-        (Math.floor(Math.random() * (255 - 0) + 0)) + "," +
-        (Math.floor(Math.random() * (255 - 0) + 0)) + ",0.2)",
-      borderColor: "#" + ((1 << 24) * Math.random() | 0).toString(16),
+      label: 'Velociad del viento',
+      backgroundColor: 'rgba(' +
+        (Math.floor(Math.random() * (255 - 0) + 0)) + ',' +
+        (Math.floor(Math.random() * (255 - 0) + 0)) + ',' +
+        (Math.floor(Math.random() * (255 - 0) + 0)) + ',0.2)',
+      borderColor: '#' + ((1 << 24) * Math.random() | 0).toString(16),
 
       lineTension: 0.25,
       borderCapStyle: 'square',
       borderDashOffset: 0.0,
       borderJoinStyle: 'miter',
-      pointBorderColor: "black",
-      pointBackgroundColor: "white",
+      pointBorderColor: 'black',
+      pointBackgroundColor: 'white',
 
       pointBorderWidth: 1,
       pointHoverRadius: 5,
-      pointHoverBackgroundColor: "#fdd835",
-      pointHoverBorderColor: "brown",
+      pointHoverBackgroundColor: '#fdd835',
+      pointHoverBorderColor: 'brown',
       pointHoverBorderWidth: 1,
       pointRadius: 3,
       pointHitRadius: 5,
 
       spanGaps: true,
-      data: props.w_s_data
-    },
+      data: props.wsData
+    }
     ]
-  };
+  }
 
   return (
     <>
-      <Grid container direction="row" justify="center" alignItems="center">
+      <Grid container direction='row' justify='center' alignItems='center'>
         <Grid item style={{ textAlign: 'center' }}>
-          <Typography variant="h3" style={{ fontWeight: 'bold' }}>
+          <Typography variant='h3' style={{ fontWeight: 'bold' }}>
             Tablas de datos
           </Typography>
         </Grid>
-        <Grid item md={12} sm={12} style={{overflowX: 'auto', width: '100vh'}}>
-          <Line data={data} width={'700'} height={'400'} options={{ maintainAspectRatio: false }} />
+        <Grid item md={12} sm={12} style={{ overflowX: 'auto', width: '100vh' }}>
+          <Line data={data} width='700' height='400' options={{ maintainAspectRatio: false }} />
         </Grid>
       </Grid>
     </>
@@ -112,4 +107,3 @@ function NiceCharts(props) {
 }
 
 export default NiceCharts
-

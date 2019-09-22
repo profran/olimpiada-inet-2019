@@ -1,7 +1,8 @@
 import React from 'react'
-import TodosContainer from './views/todos/todos.containers'
 import Home from './components/home'
+import { ThemeProvider } from '@material-ui/styles'
+import theme from './theme'
 
 export default function App () {
-  return <Home />
+  return <ThemeProvider theme={theme}><Home /></ThemeProvider>
 }

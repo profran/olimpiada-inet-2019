@@ -10,10 +10,10 @@ export default class WindContainer extends Component {
     this.state = {
       windData: {
         labels: [],
-        i_data: [],
-        w_d_data: [],
-        w_s_data: [],
-        v_data: []
+        iData: [],
+        wdData: [],
+        wsData: [],
+        vData: []
       },
       isLoading: true
     }
@@ -21,39 +21,36 @@ export default class WindContainer extends Component {
 
   componentDidMount () {
     getWindData().then((response) => {
-      let labels = []     
-      let i_data = []
-      let w_d_data = []
-      let w_s_data = []
-      let v_data = []
-
-      console.log(response)
+      const labels = []
+      const iData = []
+      const wdData = []
+      const wsData = []
+      const vData = []
 
       response.wind_data.forEach(v => {
         labels.push(v.timestamp)
-        i_data.push(v.i)
-        w_d_data.push(v.w_d)
-        w_s_data.push(v.w_s)
-        v_data.push(v.v)
+        iData.push(v.i)
+        wdData.push(v.w_d)
+        wsData.push(v.w_s)
+        vData.push(v.v)
       })
 
       this.setState({
         windData: {
           labels: labels,
-          i_data: i_data,
-          w_d_data: w_d_data,
-          w_s_data: w_s_data,
-          v_data: v_data
+          iData: iData,
+          wdData: wdData,
+          wsData: wsData,
+          vData: vData
         }
       })
     })
   }
 
   render () {
-    console.log(this.state)
     return (
       <Grid container justify='center'>
-        <NiceCharts i_data={this.state.windData.i_data} v_data={this.state.windData.v_data} w_s_data={this.state.windData.w_s_data} labels={this.state.windData.labels}/>
+        <NiceCharts iData={this.state.windData.iData} vData={this.state.windData.vData} wsData={this.state.windData.wsData} labels={this.state.windData.labels} />
       </Grid>
     )
   }
