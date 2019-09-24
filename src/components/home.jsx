@@ -7,10 +7,7 @@ import WindContainer from '../views/wind/wind.containers'
 
 import Tables from '../components/tables'
 
-import {
-  Route,
-  BrowserRouter
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 export default class Home extends Component {
   constructor (props) {
@@ -23,21 +20,21 @@ export default class Home extends Component {
 
   render () {
     return (
-      <BrowserRouter>
-        <AppBar position='static' style={{ marginBottom: '2rem' }}>
+      <Router>
+        <AppBar position='static' color='inherit' style={{ marginBottom: '2rem' }}>
           <Toolbar>
             <Typography variant='h6' style={{ flexGrow: 1 }}>
               EoliCox
             </Typography>
-            <Button color='inherit' href='/charts'>Graficos</Button>
-            <Button color='inherit' href='/'>Tablas</Button>
+            <Button to='/charts' component={Link}>Graficos</Button>
+            <Button to='/' component={Link}>Tablas</Button>
           </Toolbar>
         </AppBar>
         <Container>
           <Route exact path='/' component={Tables} />
           <Route exact path='/charts' component={WindContainer} />
         </Container>
-      </BrowserRouter>
+      </Router>
     )
   }
 }

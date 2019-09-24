@@ -99,7 +99,7 @@ function NiceCharts (props) {
           </Typography>
         </Grid>
         <Grid item md={12} sm={12} style={{ overflowX: 'auto', width: '100vh' }}>
-          <Line data={data} width='700' height='400' options={{ maintainAspectRatio: false }} />
+          <Line data={data} width='700' height='400' options={{ maintainAspectRatio: false, legend: { labels: { fontColor: 'white' } } }} />
         </Grid>
       </Grid>
     </>
